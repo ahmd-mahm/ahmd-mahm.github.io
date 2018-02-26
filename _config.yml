@@ -11,7 +11,7 @@ remote_theme: "mmistakes/minimal-mistakes"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "The Oceans and Statistics"
+title                    : "Probing our Oceans"
 title_separator          : "-"
 name                     : "Ahmed Mahmood"
 description              : "My door to the digital world"

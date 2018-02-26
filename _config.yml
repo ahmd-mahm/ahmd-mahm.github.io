@@ -96,9 +96,9 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "My door to the digital world"
   location         : "Singapore"
-  email            : ahmed@arl.nus.edu.sg
-  uri              : https://arl.nus.edu.sg/twiki6/bin/view/ARL/AhmedMahmood
-  home             : # null (default), "absolute or relative url to link to author home"
+  email            : "ahmed@arl.nus.edu.sg"
+  uri              : "https://arl.nus.edu.sg/twiki6/bin/view/ARL/AhmedMahmood"
+  home             : "https://goo.gl/TRBVwK"
   bitbucket        :
   codepen          :
   dribbble         :

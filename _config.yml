@@ -93,7 +93,7 @@ analytics:
 # Site Author
 author:
   name             : "Ahmed Mahmood"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : /images/IMG_3722.png
   bio              : "My door to the digital world"
   location         : "Singapore"
   email            : "ahmed@arl.nus.edu.sg"

@@ -15,7 +15,7 @@ title                    : "On Ocean Statistics, Signal Processing and Communica
 title_separator          : "-"
 name                     : "Ahmed Mahmood"
 description              : "My door to the digital world"
-url                      : "https://ahmd-mahm.github.io/"
+url                      : "https://ahmd-mahm.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "ahmd-mahm/ahmd-mahm.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"

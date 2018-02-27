@@ -44,7 +44,7 @@ Amazing right?! For the curious, the audio is sampled at 60 kHz and represents t
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/331066895&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 
-As Yoda would say, 'Noisy indeed are Singapore waters...' smile But is this phenomenon just limited to Singapore and a few other places? We find out next!
+As Yoda would say, 'Noisy indeed are Singapore waters...' :frog: But is this phenomenon just limited to Singapore and a few other places? We find out next!
 
 ### Impact on underwater acoustic systems
 

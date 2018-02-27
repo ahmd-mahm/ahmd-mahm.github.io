@@ -142,7 +142,7 @@ Other ways to measure temporal dependence (another way of saying that the proces
 - Instead of measuring intervals between events, the data is treated as a realization of a counting process. The data is divided into non-overlapping blocks of a certain time length. The total number of events that fall within each block are counted. Measures such as the Fano-factor (FF) can be employed and plotted against block length. The resulting FF curves offer much insight into the burstiness of the process. For example, the FF curve is unity if the events are independent, i.e., if the noise is not bursty.
 - Delay scatter plots of the noise samples can be generated and offer much insight into the dependence structures between closely spaced samples. Revert to one of [my previous papers](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Mahmood2015OCEANS.pdf){:target="_blank"} on the topic for some awesome visuals in this regard.
 
-For the curious, [Matthew Legg's thesis](https://espace.curtin.edu.au/handle/20.500.11937/839){:target="_blank"} offers much in terms of processing and analyzing snapping shrimp noise. The thesis covers II/FF analysis in necessary detail and presents great illustrations along the way. It is a must-read for anyone who really wants to get serious with this stuff. Boy isn't this a ride! :)
+For the curious, [Matthew Legg's thesis](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.669.3670&rep=rep1&type=pdf){:target="_blank"} offers much in terms of processing and analyzing snapping shrimp noise. The thesis covers II/FF analysis in necessary detail and presents great illustrations along the way. It is a must-read for anyone who really wants to get serious with this stuff. Boy isn't this a ride! :)
 
 
 ## <a name="P3"></a> Part 3: Modeling snapping shrimp noise
@@ -198,7 +198,11 @@ Researchers at the ARL have employed the WSαSN process to great effect. Resulti
 
 <a name="PSD_aSGN"></a>![alt text](../images/PSD_aSGN.png "PSD tracking of αSGN(m)")
 
-To further highlight the overall effectiveness of αSGN($$m$$), I have plotted a realization of αSGN($$8$$) below. The corresponding parameters are tuned to our snapping shrimp dataset. Now, this is what it all comes down to... Compare the realization below to the [snapping shrimp noise realization](#SSnoise) posted previously. Phenomenal right??!! :eek: . We as a community have never been this close to modeling the noise process!
+To further highlight the overall effectiveness of αSGN($$m$$), I have plotted a realization of αSGN($$8$$) below:
+
+<a name="aSGN8"></a>![alt text](../images/aSGN8.png "PSD tracking of αSGN(m)")
+
+The corresponding parameters are tuned to our snapping shrimp dataset. Now, this is what it all comes down to... Compare the realization below to the [snapping shrimp noise realization](#SSnoise) posted previously. Phenomenal right??!! :eek: . We as a community have never been this close to modeling the noise process!
 
 
 Several publications highlight the awesomeness of this model! Of these, [Mahmood (2015)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Mahmood2015OCEANS.pdf){:target="_blank"}, [Mahmood (2016a)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Modelbased.pdf){:target="_blank"} and [Mahmood (2016b)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Uncoded.pdf){:target="_blank"} offer quick reads, while [Mahmood (2017b)](http://dx.doi.org/10.1109/JOE.2016.2603790){:target="_blank"} offers a somewhat detailed insight into the topic. In no way is the αSGN($$m$$) model perfect (there is no such thing). Though the modeling itself can approve, I am convinced that as of now, αSGN($$m$$) is the best model for snapping shrimp noise. Algorithms designed within its framework are tractable and offer computational complexities that are manageable with today's computation power.

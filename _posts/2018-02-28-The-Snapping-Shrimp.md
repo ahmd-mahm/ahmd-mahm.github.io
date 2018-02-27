@@ -18,7 +18,7 @@ In recent years, a significant chunk of work has been devoted to understanding s
 
 The first thing I would like to talk about is the motivation behind addressing snapping shrimp noise. Though the oceanic community is well-aware of the phenomenon, the global scale of this is known only to a few. Therefore, to most, its true impact may not be truly understood. The interested reader is directed to [Part 1: The marvelous snapping shrimp!](#P1) in this regard. This section also includes snippets of sound files recorded in snapping shrimp waters and some fun videos too.
 
-The oceanic research community has seen substantial growth since the early 90s. A quick search for the term 'Underwater Acoustics' in [Web of Science](https://webofknowledge.com/) gives us the following hits per year:
+The oceanic research community has seen substantial growth since the early 90s. A quick search for the term 'Underwater Acoustics' in [Web of Science](https://webofknowledge.com/){:target="_blank"} gives us the following hits per year:
 
 
 <!--![alt text][ArticlesUWAcoustics]

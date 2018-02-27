@@ -225,10 +225,10 @@ We are finally done! The goal was to capture the global scale of the snapping sh
 
 
 ```
-@article{ahmed:2017,
+@article{ahmed:2018,
 author = {A. Mahmood},   
 title = {Snapping shrimp noise: motivation and modeling},   
-year = {2017},   
+year = {2018},   
 url = {https://goo.gl/qhpHRA}   
 }
 ```

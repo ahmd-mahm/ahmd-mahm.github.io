@@ -10,20 +10,6 @@ tags:
   - Snapping Shrimp
 ---
 
-## Before getting started
-
-- All technical figures/files on this page are for public use, so share away!
-
-- To cite this article in a technical paper, use either the Bibtex entry:
-
-
-```@article{ahmed:2017,   
-author = {A. Mahmood},   
-title = {Snapping shrimp noise: motivation and modeling},   
-year = {2017},   
-url = {https:}   
-}
-```
 
 ## The purpose of this article
 
@@ -224,4 +210,18 @@ So where do we go from here?! I will be attaching a MATLAB code for αSGN($$m$$)
 
 ## Conclusion
 
-We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN($$m$$) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :D !
+We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN($$m$$) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :D ! As a final note,
+
+
+- All technical figures/files on this page are for public use, so share away!
+
+- To cite this article in a technical paper, use either the Bibtex entry:
+
+
+```@article{ahmed:2017,   
+author = {A. Mahmood},   
+title = {Snapping shrimp noise: motivation and modeling},   
+year = {2017},   
+url = {https:}   
+}
+```

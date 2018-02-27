@@ -497,7 +497,8 @@
   border: 1px solid $border-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-
+  position: fixed
+   
   .nav__title {
     color: #fff;
     font-size: $type-size-6;

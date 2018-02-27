@@ -205,6 +205,7 @@ To further highlight the overall effectiveness of αSGN(m), I have plotted a rea
 The corresponding parameters are tuned to our snapping shrimp dataset. Now, this is what it all comes down to... Compare the realization below to the [snapping shrimp noise realization](#SSnoise) posted previously. Phenomenal right??!! :wink: . We as a community have never been this close to modeling the noise process!
 
 
+
 Several publications highlight the awesomeness of this model! Of these, [Mahmood (2015)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Mahmood2015OCEANS.pdf){:target="_blank"}, [Mahmood (2016a)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Modelbased.pdf){:target="_blank"} and [Mahmood (2016b)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Uncoded.pdf){:target="_blank"} offer quick reads, while [Mahmood (2017b)](http://dx.doi.org/10.1109/JOE.2016.2603790){:target="_blank"} offers a somewhat detailed insight into the topic. In no way is the αSGN(m) model perfect (there is no such thing). Though the modeling itself can approve, I am convinced that as of now, αSGN(m) is the best model for snapping shrimp noise. Algorithms designed within its framework are tractable and offer computational complexities that are manageable with today's computation power.
 
 ### Code
@@ -223,7 +224,8 @@ We are finally done! The goal was to capture the global scale of the snapping sh
 - To cite this article in a technical paper, use either the Bibtex entry:
 
 
-```@article{ahmed:2017,
+```
+@article{ahmed:2017,
 author = {A. Mahmood},   
 title = {Snapping shrimp noise: motivation and modeling},   
 year = {2017},   

@@ -1,3 +1,7 @@
+---
+mathjax: true
+---
+
 # Before getting started
 
 - All technical figures/files on this page are for public use, so share away!

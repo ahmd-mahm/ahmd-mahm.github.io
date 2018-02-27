@@ -84,9 +84,11 @@ On another note, terms like "warm shallow waters" and "shallow tropical waters" 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Y9UdkcsgNy4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+
+
 # <a name="P2"></a>Part 2: Analyzing snapping shrimp noise data
 
-Source level of a snapping shrimp snap
+## Source level of a snapping shrimp snap
 
 
 In acoustics, the definition of 'source level' is standard. It essentially depends on the pressure $$ p $$ measured at a distance $$d$$ from the acoustic source. Source levels are evaluated in decibels ($$\text{dB}$$) with respect to a reference pressure $$p_0$$. In underwater acoustics, the references are typically set to $$p_0=1\mu\text{Pa}$$ and $$d=1\text{m}$$. Consequently, the source level is evaluated by

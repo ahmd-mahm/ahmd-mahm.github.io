@@ -1,8 +1,12 @@
 ---
-
+title: "Snapping Shrimp Noise: Motivation and Modeling"
 mathjax: true
-font-size: 10px
-
+categories:
+  - Posts
+tags:
+  - Impulsive Noise
+  - Posts
+  - Snapping Shrimp
 ---
 
 # Before getting started

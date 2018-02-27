@@ -1,6 +1,9 @@
 ---
 title: "Snapping Shrimp Noise: Motivation and Modeling"
 mathjax: true
+toc: true
+toc_label: "Unique Title"
+toc_icon: "heart"
 tags:
   - Impulsive Noise
   - Posts

@@ -5,7 +5,7 @@ excerpt: "Research Interests & Publications"
 layout: single
 toc: "true"
 toc_label: "On This Page"
-toc_icon: "user_secret"
+toc_icon: "user-secret"
 ---
 
 ## Research Interests

@@ -1,5 +1,6 @@
 ---
 title: "Snapping Shrimp Noise: Motivation and Modeling"
+excerpt: "In recent years, a significant chunk of work has been devoted to understanding snapping shrimp noise and its impact on underwater acoustic systems. The article is directed not only towards new researchers in the underwater acoustics community, but offers a tutorial to anyone curious enough to know what snapping shrimp noise is, how prevalent it might be and how it has been modeled in the literature."
 mathjax: true
 toc: true
 toc_label: "On This Page"

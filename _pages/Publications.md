@@ -1,6 +1,6 @@
 ---
 permalink: /publications/
-title: "Publication Page"
+title: "Research Interests & Publication Page"
 excerpt: "Research Interests & Publications"
 layout: single
 toc: "true"

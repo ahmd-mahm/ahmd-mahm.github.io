@@ -62,9 +62,23 @@ On another note, terms like "warm shallow waters" and "shallow tropical waters" 
 - A new species, the Pink Floyd snapping shrimp, was recently discovered (published in 2017) of the pacific coast of Panama. A colorful specimen indeed, you find much more about them here.
 - There are some beautiful videos out there that highlight the physics behind a snapping shrimp snap. The following is a slo-mo video capture of a snapping shrimp closing its pincer (courtesy BBCEarth)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QXK2G2AzMTU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 - Snapping shrimp are omnipresent in Singapore waters. A short clip by the History Channel Asia highlights some fun facts about these marvelous creatures. Expertise provided by our very own [Mandar Chitre](https://arl.nus.edu.sg/twiki6/bin/view/ARL/MandarChitre). Enjoy smile
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y9UdkcsgNy4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 # <a name="P2"></a>Part 2: Analyzing snapping shrimp noise data
+
+Source level of a snapping shrimp snap
+
+
+In acoustics, the definition of 'source level' is standard. It essentially depends on the pressure $$p$$ measured at a distance $$d$$% from the acoustic source. Source levels are evaluated in decibels ($$\text{dB}$$) with respect to a reference pressure $$p_0$$. In underwater acoustics, the references are typically set to $$p_0=1\mu\text{Pa}$$ and $$d=1\text{m}$$.Consequently, the source level is evaluated by $$$x=10\log_{10}\big(\frac{p}{p_0}\big)=10\log_{10}p.$$$ To avoid any ambiguity, the source level is expressed in the shorthand form $$x~\text{dB re}~p_0\mu\text{Pa}~\text{at}~d\text{m}$$ or specifically for standard readings in the underwater case, $$x~\text{dB re}~1\mu\text{Pa}~\text{at}~1\text{m}$$ . Do note that $$d$$ is an important parameter and source levels reported without it are useless quantities as the same source may be deafening nearby but can be essentially reduced to a whisper by moving arbitrarily away from it.
+
+
+Now that the necessary definitions are out of the way, I must highlight that peak-to-peak source levels of a single snapping shrimp snap have been recorded to be as high as $$180~\text{dB re}~1\mu\text{Pa}~\text{at}~1\text{m}$$. In fact, the recently discovered Pink Floyd snapping shrimp is recorded to be even higher! Not feeling the loudness yet? Well, let's make a comparison:
+
+
+For the curious reader, a good summary of (air) acoustic terminology/measurements is given here and includes a list of source levels (measured in %$\text{dB}$%) of several sources. Of interest is the source level of a jet engine, quoted as $$140~\text{dB re}~20\mu\text{Pa}~\text{at}~50\text{m}$$ (or $$153~\text{dB re}~1\mu\text{Pa}~\text{at}~50\text{m}$$). This signifies an astonishing result: The peak-to-peak source level of a snap is much louder than a jet engine 50m away!! It really is a blessing that each individual snap lasts only for a few hundred picoseconds, else diving in such an environment without ear protection would have resulted in ruptured ear drums! With this in mind, I am sure the previously introduced audio files can be revisited with more appreciation.
 
 # <a name="P3"></a> Part 3: Modeling snapping shrimp noise

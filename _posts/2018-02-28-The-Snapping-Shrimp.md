@@ -117,7 +117,7 @@ Any one who works with underwater acoustic communication/signal processing needs
 
 #### Amplitude distribution
 
-Now that we looked at the noise samples and have a good feel about the process (as a time-series and a sound), we can now move on to some more cooler stuff. Investigating the *amplitude distribution* of the noise process is perhaps the first thing that comes to mind. I've considered a 30 sec long recording of ambient noise. As before, this dataset is sampled at 180kHz and was recorded of the coast of Singapore. I've evaluated the empirical amplitude probability density function (PDF) and have plotted it as the yellow histogram below. Also plotted is a Gaussian PDF, whose parameters (mean and variance) are estimated via maximum-likelihood (ML) from the noise data. Perhaps its been drilled into us, but the first instinct of almost anyone out there is to assume noise to be Gaussian. The figure below (as well as the realizations shown previously) show that the noise process is clearly non-Gaussian. The log-scaled y-axis is purposely chosen as it highlights how significant the deviation actually is. Impulsiveness is factually a non-Gaussian property and we see it in its full glory below :)
+Now that we looked at the noise samples and have a good feel about the process (as a time-series and a sound), we can now move on to some more cooler stuff. Investigating the *amplitude distribution* of the noise process is perhaps the first thing that comes to mind. I've considered a 30 sec long recording of ambient noise. As before, this dataset is sampled at 180kHz and was recorded of the coast of Singapore. I've evaluated the empirical amplitude probability density function (PDF) and have plotted it as the yellow histogram below. Also plotted is a Gaussian PDF, whose parameters (mean and variance) are estimated via maximum-likelihood (ML) from the noise data. Perhaps its been drilled into us, but the first instinct of almost anyone out there is to assume noise to be Gaussian. The figure below (as well as the realizations shown previously) show that the noise process is clearly non-Gaussian. The log-scaled y-axis is purposely chosen as it highlights how significant the deviation actually is. Impulsiveness is factually a non-Gaussian property and we see it in its full glory below :smile:
 
 
  
@@ -194,7 +194,7 @@ Going from an amplitude distribution to a noise process that models snapping shr
 
 <a name="WSaSN"></a>![alt text](../images/WSaSN.png "A realization of WSαSN")
 
-Researchers at the ARL have employed the WSαSN process to great effect. Resulting works, backed by a solid theoretical framework, have offered effective algorithms that exploit snapping shrimp noise for underwater acoustic systems. [Chitre (2006)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Chitre2006a.pdf){:target="_blank"} and [Mahmood (2014)](https://scholarbank.nus.edu.sg/handle/10635/77754){:target="_blank"} offer good reads and great visuals in this regard. However, it was always felt that the model was lacking. This thought resulted in [Mahmood (2015)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Mahmood2015OCEANS.pdf){:target="_blank"}, where the stationary α-sub-Gaussian noise with memory order $$m$$ (αSGN($$m$$)) model was introduced. The model is essentially a sliding-window Markov model that constrains any adjacent $$m+1$$ samples to be a multivariate elliptic SαS distribution. This guarantees the amplitude distribution to be SαS and draws many parallels with an AR($$m$$) process. I will not go into the specifics, but what I will highlight is how it is able to track the PSD of our snapping shrimp noise dataset (shown below). Behold, the awesomeness of αSGN($$m$$) :grin: . On a quick sidenote, αSGN(0) is essentially WSαSN.
+Researchers at the ARL have employed the WSαSN process to great effect. Resulting works, backed by a solid theoretical framework, have offered effective algorithms that exploit snapping shrimp noise for underwater acoustic systems. [Chitre (2006)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Chitre2006a.pdf){:target="_blank"} and [Mahmood (2014)](https://scholarbank.nus.edu.sg/handle/10635/77754){:target="_blank"} offer good reads and great visuals in this regard. However, it was always felt that the model was lacking. This thought resulted in [Mahmood (2015)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Mahmood2015OCEANS.pdf){:target="_blank"}, where the stationary α-sub-Gaussian noise with memory order m (αSGN(m)) model was introduced. The model is essentially a sliding-window Markov model that constrains any adjacent m+1 samples to be a multivariate elliptic SαS distribution. This guarantees the amplitude distribution to be SαS and draws many parallels with an AR(m) process. I will not go into the specifics, but what I will highlight is how it is able to track the PSD of our snapping shrimp noise dataset (shown below). Behold, the awesomeness of αSGN(m) :grin: . On a quick sidenote, αSGN(0) is essentially WSαSN.
 
 <a name="PSD_aSGN"></a>![alt text](../images/PSD_aSGN.png "PSD tracking by αSGN(m)")
 
@@ -205,17 +205,17 @@ To further highlight the overall effectiveness of αSGN($$m$$), I have plotted a
 The corresponding parameters are tuned to our snapping shrimp dataset. Now, this is what it all comes down to... Compare the realization below to the [snapping shrimp noise realization](#SSnoise) posted previously. Phenomenal right??!! :wink: . We as a community have never been this close to modeling the noise process!
 
 
-Several publications highlight the awesomeness of this model! Of these, [Mahmood (2015)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Mahmood2015OCEANS.pdf){:target="_blank"}, [Mahmood (2016a)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Modelbased.pdf){:target="_blank"} and [Mahmood (2016b)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Uncoded.pdf){:target="_blank"} offer quick reads, while [Mahmood (2017b)](http://dx.doi.org/10.1109/JOE.2016.2603790){:target="_blank"} offers a somewhat detailed insight into the topic. In no way is the αSGN($$m$$) model perfect (there is no such thing). Though the modeling itself can approve, I am convinced that as of now, αSGN($$m$$) is the best model for snapping shrimp noise. Algorithms designed within its framework are tractable and offer computational complexities that are manageable with today's computation power.
+Several publications highlight the awesomeness of this model! Of these, [Mahmood (2015)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Mahmood2015OCEANS.pdf){:target="_blank"}, [Mahmood (2016a)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Modelbased.pdf){:target="_blank"} and [Mahmood (2016b)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Uncoded.pdf){:target="_blank"} offer quick reads, while [Mahmood (2017b)](http://dx.doi.org/10.1109/JOE.2016.2603790){:target="_blank"} offers a somewhat detailed insight into the topic. In no way is the αSGN(m) model perfect (there is no such thing). Though the modeling itself can approve, I am convinced that as of now, αSGN(m) is the best model for snapping shrimp noise. Algorithms designed within its framework are tractable and offer computational complexities that are manageable with today's computation power.
 
 ### Code
 
 
-So where do we go from here?! I will be attaching a MATLAB code for αSGN($$m$$) shortly, so stay tuned :)
+So where do we go from here?! I will be attaching a MATLAB code for αSGN(m) shortly, so stay tuned :)
 
 
 ## Conclusion
 
-We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN($$m$$) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :D ! As a final note,
+We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN(m) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :D ! As a final note,
 
 
 - All technical figures/files on this page are for public use, so share away!
@@ -223,7 +223,7 @@ We are finally done! The goal was to capture the global scale of the snapping sh
 - To cite this article in a technical paper, use either the Bibtex entry:
 
 
-```@article{ahmed:2017,   
+```@article{ahmed:2017,
 author = {A. Mahmood},   
 title = {Snapping shrimp noise: motivation and modeling},   
 year = {2017},   

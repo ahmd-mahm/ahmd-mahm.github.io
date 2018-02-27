@@ -1,5 +1,8 @@
 ---
+
 mathjax: true
+font-size: 16px
+
 ---
 
 # Before getting started

@@ -12,12 +12,13 @@ font-size: 16px
 - To cite this article in a technical paper, use either the Bibtex entry:
 
 
-> @article{ahmed:2017,   
+```@article{ahmed:2017,   
 author = {A. Mahmood},   
 title = {Snapping shrimp noise: motivation and modeling},   
 year = {2017},   
 url = {https:}   
 }
+```
 
 # The purpose of this article
 

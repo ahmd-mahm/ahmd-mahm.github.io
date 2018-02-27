@@ -212,3 +212,13 @@ To further highlight the overall effectiveness of αSGN($$m$$), I have plotted a
 
 
 Several publications highlight the awesomeness of this model! Of these, Mahmood (2015), Mahmood (2016a) and Mahmood (2016b) offer quick reads, while Mahmood (2017b) offers a somewhat detailed insight into the topic. In no way is the αSGN($$m$$) model perfect (there is no such thing). Though the modeling itself can approve, I am convinced that as of now, αSGN($$m$$) is the best model for snapping shrimp noise. Algorithms designed within its framework are tractable and offer computational complexities that are manageable with today's computation power.
+
+## Code
+
+
+So where do we go from here?! I will be attaching a MATLAB code for αSGN($$m$$) shortly, so stay tuned :)
+
+
+## Conclusion
+
+We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN($$m$$) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :D !

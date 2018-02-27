@@ -1,7 +1,7 @@
 ---
 
 mathjax: true
-font-size: 16px
+font-size: 10px
 
 ---
 

@@ -155,3 +155,74 @@ For the curious, [Matthew Legg's thesis](https://espace.curtin.edu.au/handle/20.
 
 
 # <a name="P3"></a> Part 3: Modeling snapping shrimp noise
+
+Till now, I have tried providing some visuals that give a feel of snapping shrimp noise. This is an open area and researchers are always welcome to come up with new/better measures that quantify the noise process. This part is devoted to modeling snapping shrimp noise. Spoiler: I will be harsh on certain things, but I'll be as reasonable as I most possible can! :yes:
+
+
+## Amplitude distribution
+
+
+I am going to address the elephant in the room straight away: Gaussian mixture (GM) models. I listed down my concerns about these models right at the start of the article. There is a lot in the literature about them, especially within the machine learning community. However, they have found their way into communications and the signal processing community in general. Don't get me wrong, I think GMs have so much to offer if applied correctly. However, when it comes to snapping shrimp noise, they offer woeful approximations (yes I did just say that!). What makes it worse is that there are much better models out there (will get down to discussing one of those shortly), which are somehow being overlooked. Harder and conceptually demanding they say? certainly yes! But isn't that what research is? exploring the unknown and getting out of comfort zones! :yes:
+
+
+Let me try debunking this myth once and for all. Below are fits for various GM PDFs to our snapping shrimp noise data. We denote a GM with $$k$$% (Gaussian) components as GM($$k$$). The corresponding parameters were estimated by the expectation-maximization algorithm. Clearly, none of these track the empirical amplitude PDF well. In particular, the GM(2) PDF just seems so artificial. Increasing $$k$$, increases the number of parameters (and thus the degrees of freedom) of the GM distribution. In fact, a GM($$k$$) has $$3k-1$$ degrees of freedom. Notice how even with 29 degrees of freedom the GM(10) is still unable to precisely fit the data PDF. Sure enough, if one increases $$k$$, the PDF will eventually bear more semblance to the histogram. But this is essentially overfitting and can be totally avoided!
+
+ GMFit.png
+
+In comparison, let me try fitting the empirical amplitude PDF to known heavy-tailed PDFs. A heavy-tailed distribution, by definition, is one whose tails are heavier (decay slower) than that of an exponential function. More precisely (and bear with me), $$X$$ is heavy-tailed if 
+
+$$\lim_{x\rightarrow\infty}\;e^{\lambda x}\text{P}[X>x]\rightarrow\infty\;\text{for any}\;\lambda>0.$$
+
+Shown below are two such PDFs fitted via ML to our snapping shrimp dataset, namely, the Student's t and the symmetric α-stable (SαS). Both of these PDFs have 3 degrees of freedom and offer much more natural fits than the GM($$k$$) distribution. The SαS PDF in particular offers an extremely precise fit! :love: . For the statisticians out there, the Kolmogorov-Smirnov test ( check this out!) accepted the SαS distribution as a fit to snapping shrimp data at 1% level of significance! Pure awesomeness! case and point!
+
+
+ <a name="SnapHist"></a>
+
+
+ SaSFit.png
+
+
+In retrospect, the GM($$k$$) distribution is a tough nut to sell when it comes to modeling snapping shrimp noise. From a signal processing point-of-view, an algorithm is only as good as the model it is based on. Moreover, though increasing $$k$$ may offer increasingly better fits, working within such a framework (large $$k$$) quickly loses tractability and computational efficiency when it comes to designing signal processing algorithms. Works that revert to GM distributions, typically employ GM($$2$$), which is also known as the Gaussian-Bernoulli-Gaussian (GBG) distribution. The goal, I believe, is to keep distributions as 'Gaussian' as possible as they have been well-documented in the literature. This is extremely unfortunate as we already know how artificial the corresponding PDF looks like. What makes it worse, is that such works also assume IID noise samples. This negates burstiness completely which is clearly not the case (revert to What do recorded samples look like?)!.
+
+
+ As a final comment, I must highlight that heavy-tailed SαS distributions (with exception of the Cauchy case) do not offer a closed-form PDF. Secondly, they have infinite second-order moments. These factors have been used by many a researcher to promote the use of the GBG model and do away with SαS distributions. I find this really irritating because these are in no way solid justifications. Such statements highlight ignorance of the state-of-the-art or an urge to stick with what one knows. In either way, this negates the core principles of good research. John Nolan provides an awesome history of stable distributions. In the introduction to one of his manuscripts, he highlights that the reluctance to work with such distributions are now (in this day and age) unfounded. I completely agree. In his own words, which I find extremely motivating, he says
+
+
+> Skeptics of stable models recoil from the implicit assumption of infinite variance in a non-Gaussian stable model and have proposed other models for observed heavy tailed and skewed datasets e.g. mixture models, time varying variances, etc. Of course the same people who argue that the population is inherently bounded and therefore must have a finite variance routinely use the normal distribution with unbounded support as a model for this same population. The variance is but one measure of spread for a distribution and it is not appropriate for all problems. From an applied point of view what we generally care about is capturing the shape of a distribution.
+
+
+ Awesomeness! My two cents on the matter are:
+
+
+There are very efficient numerical methods that compute SαS PDFs, see John Nolan's page in this regard. Also, the approach in Mahmood (2017a) proposes evaluating an SαS PDF by storing a suitably sampled heavy-tailed function, which can then be interpolated and scaled. A code for the latter is provided at the end of this article.
+ 
+As per Nolan's quote, the lack of second-order moments poses no hindrance at all. One way is to work with the square of the scale parameter (scale is analogous to standard deviation) which does exist for the SαS family. See the signal-to-noise ratio (SNR) definitions in these manuscripts: Gonzalez (2006) and Mahmood (2012).
+
+
+
+
+ Now that the amplitude distributions have been sorted out, let us get down to modeling the noise process.
+
+
+The %$\alpha\text{SGN}(m)$% model
+
+
+ Going from an amplitude distribution to a noise process that models snapping shrimp noise is tricky. From the early 2000s up until 2015, several works employed independent and identically distributed (IID) %$\text{S}\alpha\text{S}$% noise samples. Such a process is termed as white %$\text{S}\alpha\text{S}$% noise (%$\text{WS}\alpha\text{SN}$%). Though it does get the empirical amplitude PDF right, the burstiness is not modeled properly. To highlight this, I have plotted a realization of %$\text{WS}\alpha\text{SN}$% below. The amplitude distribution of the samples corresponds to the %$\text{S}\alpha\text{S}$% fit in the previous section. Notice the semblance of the curve with that of the randomly permuted ambient noise plot shown previously.
+
+
+ 
+
+
+ Researchers at the ARL have employed the %$\text{WS}\alpha\text{SN}$% process to great effect. Resulting works, backed by a solid theoretical framework, have offered effective algorithms that exploit snapping shrimp noise for underwater acoustic systems. Chitre (2006) and Mahmood (2014) offer good reads and great visuals in this regard. However, it was always felt that the model was lacking. This thought resulted in Mahmood (2015), where the stationary α-sub-Gaussian noise with memory order m (%$\alpha\text{SGN}(m)$%) model was introduced. The model is essentially a sliding-window Markov model that constrains any adjacent %$m+1$% samples to be a multivariate elliptic %$\text{S}\alpha\text{S}$% distribution. This guarantees the amplitude distribution to be %$\text{S}\alpha\text{S}$% and draws many parallels with an AR(%$m$%) process. I will not go into the specifics, but what I will highlight is how it is able to track the PSD of our snapping shrimp noise dataset (shown below). Behold, the awesomeness of %$\alpha\text{SGN}(m)$% :D . On a quick sidenote, %$\alpha\text{SGN}(0)$% is essentially %$\text{WS}\alpha\text{SN}$%.
+
+
+ PSD_aSGN.png
+
+
+ To further highlight the overall effectiveness of %$\alpha\text{SGN}(m)$%, I have plotted a realization of %$\alpha\text{SGN}(8)$% below. The corresponding parameters are tuned to our snapping shrimp dataset. Now, this is what it all comes down to... Compare the realization below to the snapping shrimp noise realization posted previously. Phenomenal right??!! :eek: . The first time I saw the proximity of these realizations, I literally blanked out for a few secs! We as a community have never been this close to modeling the noise process!
+
+
+ 
+
+
+ Several publications highlight the awesomeness of this model! Of these, Mahmood (2015), Mahmood (2016a) and Mahmood (2016b) offer quick reads, while Mahmood (2017b) offers a somewhat detailed insight into the topic. In no way is the %$\alpha\text{SGN}(m)$% model perfect (there is no such thing). Though the modeling itself can approve, I am convinced that as of now, %$\alpha\text{SGN}(m)$% is the best model for snapping shrimp noise. Algorithms designed within its framework are tractable and offer computational complexities that are manageable with today's computation power.

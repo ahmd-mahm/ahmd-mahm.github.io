@@ -216,12 +216,13 @@ So where do we go from here?! I will be attaching a MATLAB code for αSGN(m) sho
 
 ## Conclusion
 
-We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN(m) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :grin: ! As a final note,
+We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN(m) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :grin: ! 
 
+On a final note,
 
+- Feel free to leave your thoughts below
 - All technical figures/files on this page are for public use, so share away!
-
-- To cite this article in a technical paper, use either the Bibtex entry:
+- If required, you may cite this article in a technical paper. To do so, use the Bibtex entry:
 
 
 ```

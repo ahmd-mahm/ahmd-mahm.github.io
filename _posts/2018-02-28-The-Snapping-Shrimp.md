@@ -10,7 +10,7 @@ tags:
   - Snapping Shrimp
 ---
 
-# Before getting started
+## Before getting started
 
 - All technical figures/files on this page are for public use, so share away!
 
@@ -25,7 +25,7 @@ url = {https:}
 }
 ```
 
-# The purpose of this article
+## The purpose of this article
 
 In recent years, a significant chunk of work has been devoted to understanding snapping shrimp noise and its impact on underwater acoustic systems. It has indeed been established that conventional (Gaussian) noise models and techniques are extremely ineffective in modeling and mitigating snapping shrimp noise. The Acoustic Research Laboratory (ARL) at the National University of Singapore (NUS) has offered much in this regard. Yet with the constant onslaught of new research, it is important that the past be put in perspective. New works need to be analyzed and interpreted within previously established results. Have we been progressive, i.e., converted previous wrongs to rights? Or is it the other way around? In any case, a frank article of this sort has long been due. The article is directed not only towards new researchers in the underwater acoustics community, but offers a tutorial to anyone curious enough to know what snapping shrimp noise is, how prevalent it might be and how it has been modeled in the literature.
 
@@ -43,9 +43,9 @@ The oceanic research community has seen substantial growth since the early 90s. 
 This explosive interest is indeed welcome, as it pushes research frontiers forward at rates never fathomed before. However, it brings along with it certain unfortunate caveats. In reference to snapping shrimp noise, I have found a certain disconnect between findings reported in the literature and some of the works that have come over these last few years. There is a knack of employing various statistical noise models for snapping shrimp noise which are imported from other branches of research. Though such models may be based on substantiated claims there, they are not supported by recorded snapping shrimp data whatsoever! <!-- It is somewhat unfortunate that such works have not reverted tp research spanning over decades, that has painstakingly investigated the snapping shrimp noise process, slowly building statistical models to where they stand today. I may be incorrect, but I think the underlying reason that has contributed to this trend is that researchers new to the oceanic community bring with them a thought heavily defined by works in their areas of expertise. Some are oblivious to the fact that underwater acoustic signal processing has evolved much on its own. Consequently, it is probable that they think themselves to be introducing novel concepts to the area. --> 
 This path needs to be corrected and such myths need to be put down. To do so, this article offers a tutorial-like approach and analyzes recorded snapping shrimp noise data in [Part 2: Analyzing snapping shrimp data](#P2). Moreover, models substantiated in the literature are also briefly introduced in [Part 3: Modeling snapping shrimp noise](#P3) . The highlight amongst all is the αSGN(m) model. We end up by providing code that generates random variates and is open to all who need to use it.
 
-# <a name="P1"></a> Part 1:The marvelous snapping shrimp!
+## <a name="P1"></a> Part 1:The marvelous snapping shrimp!
 
-## A quick intro.
+### A quick intro.
 
 The snapping shrimp (family Alpheidae) is an eccentric family of crustaceans. Immediately recognizable due to its asymmetric front pincers, these shrimp colonize warm coastal waters throughout the world. The larger of its two pincers is able to produce snaps (large surges in acoustic pressure) which are strong enough to stun or even kill small prey. It was initially hypothesized that the sound was an outcome of the two halves of the pincer physically colliding into each other. However, this has long been proven false and the phenomenon is attributed to imploding bubbles that are formed from the rapid closure of the pincer, or in other words, cavitation.
 
@@ -59,7 +59,7 @@ Amazing right?! For the curious, the audio is sampled at 60 kHz and represents t
 
 As Yoda would say, 'Noisy indeed are Singapore waters...' smile But is this phenomenon just limited to Singapore and a few other places? We find out next!
 
-## Impact on underwater acoustic systems
+### Impact on underwater acoustic systems
 
 Though apparent why they have garnered much attention from marine biologists and environmentalists, the snapping shrimp is also of great interest to researchers in the field of underwater acoustic communications and signal processing. The primary reason for this is that even in the clearest of waters, acoustics (sound) is the only known means of underwater (wireless) communication if a range of several tens of meters is required. As snapping shrimp are arguably the loudest animals in the ocean, they will most definitely impact acoustic systems nearby. More specifically, the snaps produced are essentially broadband signals and are observed to be the dominant noise source within the frequencies 2kHz - 250 kHz. Further still, it has been suggested (I have seen this first hand as well) that the spectra goes way beyond 250 kHz. As of now, there are a large variety of commercially available acoustic systems that operate into the tens of kHz. Consequently, snapping shrimp noise poses a unique problem to such systems operating in the vicinity of a populace.
 
@@ -71,7 +71,7 @@ On another note, terms like "warm shallow waters" and "shallow tropical waters" 
 
 <a name="SSWorldTemp"></a>![alt text](../images/Screenshot_Tropical_Corrected.png "Snapping shrimp: from space - 2!")
 
-## Fun facts!
+### Fun facts!
 
 - A new species, the Pink Floyd snapping shrimp, was recently discovered (published in 2017) of the pacific coast of Panama. A colorful specimen indeed, you find much more about them here.
 - There are some beautiful videos out there that highlight the physics behind a snapping shrimp snap. The following is a slo-mo video capture of a snapping shrimp closing its pincer (courtesy BBCEarth)
@@ -84,9 +84,9 @@ On another note, terms like "warm shallow waters" and "shallow tropical waters" 
 
 
 
-# <a name="P2"></a>Part 2: Analyzing snapping shrimp noise data
+## <a name="P2"></a>Part 2: Analyzing snapping shrimp noise data
 
-## Source level of a snapping shrimp snap
+### Source level of a snapping shrimp snap
 
 
 In acoustics, the definition of 'source level' is standard. It essentially depends on the pressure $$ p $$ measured at a distance $$d$$ from the acoustic source. Source levels are evaluated in decibels ($$\text{dB}$$) with respect to a reference pressure $$p_0$$. In underwater acoustics, the references are typically set to $$p_0=1\mu\text{Pa}$$ and $$d=1\text{m}$$. Consequently, the source level is evaluated by
@@ -103,7 +103,7 @@ For the curious reader, a good summary of (air) acoustic terminology/measurement
 
 
 
-## What do recorded samples look like?
+### What do recorded samples look like?
 
 To truly get a feel of what we are working with, it is prudent to plot the recorded noise samples on a suitable axis. If the time scale is too large, the clustering within each snap cannot be appreciated. Similarly, if one zooms-in too much, one cannot see the density of the snaps. Right below, I have plotted recorded samples of snapping shrimp noise. The x-axis is in seconds and the y-axis is labelled "uncalibrated pressure", implying that these are raw samples taken from a hydrophone and are yet to be scaled (by a constant) to be interpreted as pressure.
  
@@ -126,9 +126,9 @@ The burstiness (or clustering of outliers) is an extremely important characteris
 Any one who works with underwater acoustic communication/signal processing needs to quantify the above findings in a statistical sense. This is done next. Dare to read on? :yes:.
 
 
-## Statistical analysis
+### Statistical analysis
 
-### Amplitude distribution
+#### Amplitude distribution
 
 Now that we looked at the noise samples and have a good feel about the process (as a time-series and a sound), we can now move on to some more cooler stuff. Investigating the *amplitude distribution* of the noise process is perhaps the first thing that comes to mind. I've considered a 30 sec long recording of ambient noise. As before, this dataset is sampled at 180kHz and was recorded of the coast of Singapore. I've evaluated the empirical amplitude probability density function (PDF) and have plotted it as the yellow histogram below. Also plotted is a Gaussian PDF, whose parameters (mean and variance) are estimated via maximum-likelihood (ML) from the noise data. Perhaps its been drilled into us, but the first instinct of almost anyone out there is to assume noise to be Gaussian. The figure below (as well as the realizations shown previously) show that the noise process is clearly non-Gaussian. The log-scaled y-axis is purposely chosen as it highlights how significant the deviation actually is. Impulsiveness is factually a non-Gaussian property and we see it in its full glory below :)
 
@@ -139,7 +139,7 @@ Now that we looked at the noise samples and have a good feel about the process (
 
 On a quick side note, the empirical amplitude PDF of a dataset is easily evaluated by dividing the interval between the minimum and maximum sample values into several bins and counting the the number of samples that fall within. The resulting histogram is then normalized such that the area under it is equal to one.
 
-### Power spectral density
+#### Power spectral density
 
 
 Though the empirical amplitude PDF offers great insight into the noise process, it does not highlight the entire picture. The burstiness of the noise process is not captured. In fact, the empirical amplitude PDF of a noise realization is *exactly* the same as that of any of its randomly interleaved variant. This is because the sample values do not change, only their respective locations on the time axis. So how can one quantify the burstiness? Another instinctive method is to look at the power spectral density (PSD) of the noise process. I've plotted the PSD of my 30 sec snapping shrimp noise dataset below and the area under the curve is normalized to one. Note that it is effectively bandlimited (due to hardware constraints) within 3kHz - 73kHz. For this range, we note that the PSD is not flat. This in turn highlights the clustering (and thus the burstiness) of the noise samples.
@@ -158,12 +158,12 @@ Other ways to measure temporal dependence (another way of saying that the proces
 For the curious, [Matthew Legg's thesis](https://espace.curtin.edu.au/handle/20.500.11937/839) offers much in terms of processing and analyzing snapping shrimp noise. The thesis covers II/FF analysis in necessary detail and presents great illustrations along the way. It is a must-read for anyone who really wants to get serious with this stuff. Boy isn't this a ride! :)
 
 
-# <a name="P3"></a> Part 3: Modeling snapping shrimp noise
+## <a name="P3"></a> Part 3: Modeling snapping shrimp noise
 
 Till now, I have tried providing some visuals that give a feel of snapping shrimp noise. This is an open area and researchers are always welcome to come up with new/better measures that quantify the noise process. This part is devoted to modeling snapping shrimp noise. Spoiler: I will be harsh on certain things, but I'll be as reasonable as I most possible can! :yes:
 
 
-## Amplitude distribution
+### Amplitude distribution
 
 
 I am going to address the elephant in the room straight away: Gaussian mixture (GM) models. I listed down my concerns about these models right at the start of the article. There is a lot in [the literature](https://en.wikipedia.org/wiki/Mixture_model) about them, especially within the machine learning community. However, they have found their way into communications and the signal processing community in general. Don't get me wrong, I think GMs have so much to offer *if applied correctly*. However, when it comes to snapping shrimp noise, they offer woeful approximations (yes I did just say that!). What makes it worse is that there are *much better* models out there (will get down to discussing one of those shortly), which are somehow being overlooked. Harder and conceptually demanding they say? certainly yes! But isn't that what research is? exploring the unknown and getting out of comfort zones! :yes:
@@ -201,7 +201,7 @@ As per Nolan's quote, the lack of second-order moments poses no hindrance at all
 
 Now that the amplitude distributions have been sorted out, let us get down to modeling the noise process.
 
-## The αSGN(m) model
+### The αSGN(m) model
 
 Going from an amplitude distribution to a noise process that models snapping shrimp noise is tricky. From the early 2000s up until 2015, several works employed independent and identically distributed (IID) SαS noise samples. Such a process is termed as white SαS noise (WSαSN). Though it does get the empirical amplitude PDF right, the burstiness is not modeled properly. To highlight this, I have plotted a realization of WSαSN below. The amplitude distribution of the samples corresponds to the [SαS fit](#SaSFit) in the previous section. Notice the semblance of the curve with that of the [randomly permuted ambient noise plot](#SSnoise_rand) shown previously.
 
@@ -216,12 +216,12 @@ To further highlight the overall effectiveness of αSGN($$m$$), I have plotted a
 
 Several publications highlight the awesomeness of this model! Of these, [Mahmood (2015)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Mahmood2015OCEANS.pdf), [Mahmood (2016a)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Modelbased.pdf) and [Mahmood (2016b)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ucomms2016Uncoded.pdf) offer quick reads, while [Mahmood (2017b)](http://dx.doi.org/10.1109/JOE.2016.2603790) offers a somewhat detailed insight into the topic. In no way is the αSGN($$m$$) model perfect (there is no such thing). Though the modeling itself can approve, I am convinced that as of now, αSGN($$m$$) is the best model for snapping shrimp noise. Algorithms designed within its framework are tractable and offer computational complexities that are manageable with today's computation power.
 
-## Code
+### Code
 
 
 So where do we go from here?! I will be attaching a MATLAB code for αSGN($$m$$) shortly, so stay tuned :)
 
 
-## Conclusion
+### Conclusion
 
 We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN($$m$$) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :D !

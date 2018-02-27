@@ -42,15 +42,16 @@ When not working, Ahmed is an avid foodie and enjoys spending time with his fami
 4. M. Chitre, A. Mahmood, and M. Armand, “Coherent communications in snapping-shrimp dominated ambient noise environments,” in Acoustics 2012 Hong Kong Conference and Exhibition, vol. 131, p. 3277, May 2012. (Invited). 
 
 ### Conferences
-
-1. V. Kalaiarasu, V. Hari, A. Mahmood, and M. Chitre, “Predicting underwater acoustic network variability using machine learning techniques,” in OCEANS 2017 MTS/IEEE, (Anchorage, Alaska), 2017.
-2. A. Mahmood, M. Chitre, and V. Hari, “Spatial Ambient Noise Inversion Using a Single Hydrophone,” in OCEANS 2017 MTS/IEEE, (Anchorage, Alaska), 2017.
-3. A. Mahmood and M. Chitre, “Robust Communication in Bursty Impulsive Noise and Rayleigh Block Fading,” in WUWNet '16, (Shanghai, China), September 2016.
-4. A. Mahmood and M. Chitre, “Temporal Analysis of Stationary Markov α-sub-Gaussian Noise,” in OCEANS 2016 MTS/IEEE, (Monterey, CA, USA), September 2016.
-5. R. Agrawal, M. Chitre, and A. Mahmood, “Design of an Address Assignment and Resolution Protocol for Underwater Networks,” in OCEANS 2016 MTS/IEEE, (Shanghai, China), April 2016.
-6. A. Mahmood and M. Chitre, “Modeling Colored Impulsive Noise by Markov Chains and Alpha-Stable Processes,” in OCEANS 2015 MTS/IEEE, (Genoa, Italy), May 2015.
-7. A. Mahmood, M. Chitre, and M. Armand, “Maximum-likelihood detection performance of uncoded OFDM in impulsive noise,” in Global Telecommunications Conference (GLOBECOM 2013), 2013 IEEE, (Atlanta, GA, USA), December 2013.
-8. A. Mahmood, M. Chitre, and M. Armand, “Baseband characterization of additive white symmetric α-stable noise,” in Proceedings of IEEE GLOBECOM 2012, (Anaheim, CA, USA), pp. 3703-3708, December 2012.
+1.	A. Mahmood and M. Chitre and H. Vishnu, “Spatial Ambient Noise Inversion Using a Single Hydrophone,” accepted in OCEANS 2018 MTS/IEEE, (Kobe, Japan), May, 2018.
+2.	Y.M Too, A. Mahmood and M. Chitre, “Feasibility of using acoustic scintillation due to underwater turbulence to measure flow speed,” accepted in OCEANS 2018 MTS/IEEE, (Kobe, Japan), May, 2018.
+3. V. Kalaiarasu, V. Hari, A. Mahmood, and M. Chitre, “Predicting underwater acoustic network variability using machine learning techniques,” in OCEANS 2017 MTS/IEEE, (Anchorage, Alaska), 2017.
+4. A. Mahmood, M. Chitre, and V. Hari, “Spatial Ambient Noise Inversion Using a Single Hydrophone,” in OCEANS 2017 MTS/IEEE, (Anchorage, Alaska), 2017.
+5. A. Mahmood and M. Chitre, “Robust Communication in Bursty Impulsive Noise and Rayleigh Block Fading,” in WUWNet '16, (Shanghai, China), September 2016.
+6. A. Mahmood and M. Chitre, “Temporal Analysis of Stationary Markov α-sub-Gaussian Noise,” in OCEANS 2016 MTS/IEEE, (Monterey, CA, USA), September 2016.
+7. R. Agrawal, M. Chitre, and A. Mahmood, “Design of an Address Assignment and Resolution Protocol for Underwater Networks,” in OCEANS 2016 MTS/IEEE, (Shanghai, China), April 2016.
+8. A. Mahmood and M. Chitre, “Modeling Colored Impulsive Noise by Markov Chains and Alpha-Stable Processes,” in OCEANS 2015 MTS/IEEE, (Genoa, Italy), May 2015.
+9. A. Mahmood, M. Chitre, and M. Armand, “Maximum-likelihood detection performance of uncoded OFDM in impulsive noise,” in Global Telecommunications Conference (GLOBECOM 2013), 2013 IEEE, (Atlanta, GA, USA), December 2013.
+10. A. Mahmood, M. Chitre, and M. Armand, “Baseband characterization of additive white symmetric α-stable noise,” in Proceedings of IEEE GLOBECOM 2012, (Anaheim, CA, USA), pp. 3703-3708, December 2012.
 
 ### PhD Thesis
 

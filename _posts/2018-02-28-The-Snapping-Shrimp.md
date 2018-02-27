@@ -1,10 +1,6 @@
 ---
 title: "Snapping Shrimp Noise: Motivation and Modeling"
 mathjax: true
-categories:
-  - Posts
-  - Fraba
-  - Mahood
 tags:
   - Impulsive Noise
   - Posts

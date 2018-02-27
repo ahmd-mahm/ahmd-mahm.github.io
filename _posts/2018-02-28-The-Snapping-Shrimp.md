@@ -110,9 +110,7 @@ For the curious reader, a good summary of (air) acoustic terminology/measurement
 To truly get a feel of what we are working with, it is prudent to plot the recorded noise samples on a suitable axis. If the time scale is too large, the clustering within each snap cannot be appreciated. Similarly, if one zooms-in too much, one cannot see the density of the snaps. Right below, I have plotted recorded samples of snapping shrimp noise. The x-axis is in seconds and the y-axis is labelled "uncalibrated pressure", implying that these are raw samples taken from a hydrophone and are yet to be scaled (by a constant) to be interpreted as pressure.
  
 
-![alt text][SSnoise]
-
-[SSnoise]: ../images/snap_plot.png "Snapping shrimp noise samples"
+<a name="SSnoise"></a> ![alt text](../images/snap_plot.png "Snapping shrimp noise samples")
 
 Awesome, yes? With the zoom setting just right, the recording clearly exhibits a lot of character :) The noise was recorded of the coast of Singapore at a sampling rate of 180kHz. There are a few 'thuds' in the time-series caused by other acoustic sources (man-made and otherwise). Nevertheless, it gives a clear insight of the noise produced by a snapping shrimp populace. A few things pop-out instantly!
 

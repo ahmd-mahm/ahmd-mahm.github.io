@@ -132,4 +132,41 @@ The burstiness (or clustering of outliers) is an extremely important characteris
 
 Any one who works with underwater acoustic communication/signal processing needs to quantify the above findings in a statistical sense. This is done next. Dare to read on? :yes:.
 
+
+## Statistical analysis
+
+### Amplitude distribution
+
+Now that we looked at the noise samples and have a good feel about the process (as a time-series and a sound), we can now move on to some more cooler stuff. Investigating the amplitude distribution of the noise process is perhaps the first thing that comes to mind. I've considered a 30 sec long recording of ambient noise. As before, this dataset is sampled at 180kHz and was recorded of the coast of Singapore. I've evaluated the empirical amplitude probability density function (PDF) and have plotted it as the yellow histogram below. Also plotted is a Gaussian PDF, whose parameters (mean and variance) are estimated via maximum-likelihood (ML) from the noise data. Perhaps its been drilled into us, but the first instinct of almost anyone out there is to assume noise to be Gaussian. The figure below (as well as the realizations shown previously) show that the noise process is clearly non-Gaussian. The log-scaled y-axis is purposely chosen as it highlights how significant the deviation actually is. Impulsiveness is factually a non-Gaussian property and we see it in its full glory below :)
+
+
+ 
+
+![alt text][GaussFit]
+
+[GaussFit]: ../images/GaussFit.png "The ML Gaussian fit..."
+
+
+On a quick side note, the empirical amplitude PDF of a dataset is easily evaluated by dividing the interval between the minimum and maximum sample values into several bins and counting the the number of samples that fall within. The resulting histogram is then normalized such that the area under it is equal to one.
+Power spectral density
+
+
+Though the empirical amplitude PDF offers great insight into the noise process, it does not highlight the entire picture. The burstiness of the noise process is not captured. In fact, the empirical amplitude PDF of a noise realization is exactly the same as that of any of its randomly interleaved variant. This is because the sample values do not change, only their respective locations on the time axis. So how can one quantify the burstiness? Another instinctive method is to look at the power spectral density (PSD) of the noise process. I've plotted the PSD of my 30 sec snapping shrimp noise dataset below and the area under the curve is normalized to one. Note that it is effectively bandlimited (due to hardware constraints) within 3kHz - 73kHz. For this range, we note that the PSD is not flat. This in turn highlights the clustering (and thus the burstiness) of the noise samples.
+
+
+![alt text][PSD_SS]
+
+[PSD_SS]: ../images/PSD_SS.png "The ML Gaussian fit..."
+
+I must highlight that the PSD on its own again does not truly encapsulate the burstiness of a process. It is very much possible to have a flat PSD and yet still have a bursty noise process, i.e., a flat PSD does not imply independent noise samples. The latter is a property uniquely attributed to Gaussian processes and its been established (for over several decades now) that snapping shrimp noise is far from Gaussian.
+
+Other ways to measure temporal dependence (another way of saying that the process is bursty) are
+
+- Inter event interval (II) analysis. An event can be defined as an impulse or a snap (cluster of impulses). Time intervals between successive (or every $$k^{th}$$) event is measured and analyzed. If independent (not bursty), the successive arrivals are exponentially distributed and every $$k^{th}$$ arrival is chi-squared ($$\mathcal{X}^2$$) distributed with $$2k$$ degrees of freedom.
+- Instead of measuring intervals between events, the data is treated as a realization of a counting process. The data is divided into non-overlapping blocks of a certain time length. The total number of events that fall within each block are counted. Measures such as the Fano-factor (FF) can be employed and plotted against block length. The resulting FF curves offer much insight into the burstiness of the process. For example, the FF curve is unity if the events are independent, i.e., if the noise is not bursty.
+- Delay scatter plots of the noise samples can be generated and offer much insight into the dependence structures between closely spaced samples. Revert to one of my previous papers on the topic for some awesome visuals in this regard.
+
+For the curious, Matthew Legg's thesis offers much in terms of processing and analyzing snapping shrimp noise. The thesis covers II/FF analysis in necessary detail and presents great illustrations along the way. It is a must-read for anyone who really wants to get serious with this stuff. Boy isn't this a ride! :)
+
+
 # <a name="P3"></a> Part 3: Modeling snapping shrimp noise

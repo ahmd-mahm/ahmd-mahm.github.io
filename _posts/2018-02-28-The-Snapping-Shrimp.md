@@ -141,7 +141,7 @@ On a quick side note, the empirical amplitude PDF of a dataset is easily evaluat
 Though the empirical amplitude PDF offers great insight into the noise process, it does not highlight the entire picture. The burstiness of the noise process is not captured. In fact, the empirical amplitude PDF of a noise realization is *exactly* the same as that of any of its randomly interleaved variant. This is because the sample values do not change, only their respective locations on the time axis. So how can one quantify the burstiness? Another instinctive method is to look at the power spectral density (PSD) of the noise process. I've plotted the PSD of my 30 sec snapping shrimp noise dataset below and the area under the curve is normalized to one. Note that it is effectively bandlimited (due to hardware constraints) within 3kHz - 73kHz. For this range, we note that the PSD is not flat. This in turn highlights the clustering (and thus the burstiness) of the noise samples.
 
 
-<a name="PSD_SS"></a>(../images/PSD_SS.png "The ML Gaussian fit...")
+<a name="PSD_SS"></a>![alt text](../images/PSD_SS.png "The ML Gaussian fit...")
 
 I must highlight that the PSD on its own again does not truly encapsulate the burstiness of a process. It is very much possible to have a flat PSD and yet still have a bursty noise process, i.e., a flat PSD does not imply independent noise samples. The latter is a property uniquely attributed to Gaussian processes and its been established (for over several decades now) that snapping shrimp noise is far from Gaussian.
 
@@ -167,7 +167,7 @@ I am going to address the elephant in the room straight away: Gaussian mixture (
 
 Let me try debunking this myth once and for all. Below are fits for various GM PDFs to our snapping shrimp noise data. We denote a GM with $$k$$% (Gaussian) components as GM($$k$$). The corresponding parameters were estimated by the expectation-maximization algorithm. Clearly, none of these track the empirical amplitude PDF well. In particular, the GM(2) PDF just seems so artificial. Increasing $$k$$, increases the number of parameters (and thus the degrees of freedom) of the GM distribution. In fact, a GM($$k$$) has $$3k-1$$ degrees of freedom. Notice how even with 29 degrees of freedom the GM(10) is still unable to precisely fit the data PDF. Sure enough, if one increases $$k$$, the PDF will eventually bear more semblance to the histogram. But this is essentially overfitting and can be totally avoided!
 
- <a name="GMFit"></a>(../images/GMFit.png "The GM fit...")
+ <a name="GMFit"></a>![alt text](../images/GMFit.png "The GM fit...")
 
 In comparison, let me try fitting the empirical amplitude PDF to known heavy-tailed PDFs. A heavy-tailed distribution, by definition, is one whose tails are heavier (decay slower) than that of an exponential function. More precisely (and bear with me), $$X$$ is heavy-tailed if 
 
@@ -176,7 +176,7 @@ $$\lim_{x\rightarrow\infty}\;e^{\lambda x}\text{P}[X>x]\rightarrow\infty\;\text{
 Shown below are two such PDFs fitted via ML to our snapping shrimp dataset, namely, the Student's t and the symmetric α-stable (SαS). Both of these PDFs have 3 degrees of freedom and offer much more natural fits than the GM($$k$$) distribution. The SαS PDF in particular offers an extremely precise fit! :love: . For the statisticians out there, the Kolmogorov-Smirnov test ( check this out!) accepted the SαS distribution as a fit to snapping shrimp data at 1% level of significance! Pure awesomeness! case and point!
 
 
-<a name="SaSFit"></a>(../images/SaSFit.png "The SαS and Student's t fit...")
+<a name="SaSFit"></a>![alt text](../images/SaSFit.png "The SαS and Student's t fit...")
 
 In retrospect, the GM($$k$$) distribution is a tough nut to sell when it comes to modeling snapping shrimp noise. From a signal processing point-of-view, an algorithm is only as good as the model it is based on. Moreover, though increasing $$k$$ may offer increasingly better fits, working within such a framework (large $$k$$) quickly loses tractability and computational efficiency when it comes to designing signal processing algorithms. Works that revert to GM distributions, typically employ GM($$2$$), which is also known as the Gaussian-Bernoulli-Gaussian (GBG) distribution. The goal, I believe, is to keep distributions as 'Gaussian' as possible as they have been well-documented in the literature. This is extremely unfortunate as we already know how artificial the corresponding PDF looks like. What makes it worse, is that such works also assume IID noise samples. This negates burstiness completely which is clearly not the case (revert to What do recorded samples look like?)!.
 
@@ -206,11 +206,7 @@ Going from an amplitude distribution to a noise process that models snapping shr
 
 Researchers at the ARL have employed the WSαSN process to great effect. Resulting works, backed by a solid theoretical framework, have offered effective algorithms that exploit snapping shrimp noise for underwater acoustic systems. Chitre (2006) and Mahmood (2014) offer good reads and great visuals in this regard. However, it was always felt that the model was lacking. This thought resulted in Mahmood (2015), where the stationary α-sub-Gaussian noise with memory order $$m$$ (αSGN($$m$$)) model was introduced. The model is essentially a sliding-window Markov model that constrains any adjacent %$m+1$% samples to be a multivariate elliptic SαS distribution. This guarantees the amplitude distribution to be SαS and draws many parallels with an AR($$m$$) process. I will not go into the specifics, but what I will highlight is how it is able to track the PSD of our snapping shrimp noise dataset (shown below). Behold, the awesomeness of αSGN($$m$$) :D . On a quick sidenote, αSGN($$0$$) is essentially WSαSN.
 
-
- PSD_aSGN.png
- 
-<a name="PSD_aSGN"></a>(../images/PSD_aSGN.png "PSD tracking of αSGN(m)")
-
+<a name="PSD_aSGN"></a>![alt text](../images/PSD_aSGN.png "PSD tracking of αSGN(m)")
 
 To further highlight the overall effectiveness of αSGN($$m$$), I have plotted a realization of αSGN($$8$$) below. The corresponding parameters are tuned to our snapping shrimp dataset. Now, this is what it all comes down to... Compare the realization below to the snapping shrimp noise realization posted previously. Phenomenal right??!! :eek: . The first time I saw the proximity of these realizations, I literally blanked out for a few secs! We as a community have never been this close to modeling the noise process!
 

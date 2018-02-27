@@ -198,7 +198,7 @@ Researchers at the ARL have employed the WSαSN process to great effect. Resulti
 
 <a name="PSD_aSGN"></a>![alt text](../images/PSD_aSGN.png "PSD tracking by αSGN(m)")
 
-To further highlight the overall effectiveness of αSGN($$m$$), I have plotted a realization of αSGN(8) below:
+To further highlight the overall effectiveness of αSGN(m), I have plotted a realization of αSGN(8) below:
 
 <a name="aSGN8"></a>![alt text](../images/aSGN8.png "Realization of αSGN(8)")
 
@@ -210,12 +210,12 @@ Several publications highlight the awesomeness of this model! Of these, [Mahmood
 ### Code
 
 
-So where do we go from here?! I will be attaching a MATLAB code for αSGN(m) shortly, so stay tuned :)
+So where do we go from here?! I will be attaching a MATLAB code for αSGN(m) shortly, so stay tuned...
 
 
 ## Conclusion
 
-We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN(m) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :D ! As a final note,
+We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN(m) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :grin: ! As a final note,
 
 
 - All technical figures/files on this page are for public use, so share away!

@@ -37,7 +37,7 @@ The oceanic research community is relatively young but has seen substantial grow
 
 ![alt text][ArticlesUWAcoustics]
 
-[ArticlesUWAcoustics]: /images/11.png "Annual hits for 'underwater acoustics'"
+[ArticlesUWAcoustics]: ../images/11.png "Annual hits for 'underwater acoustics'"
 
 This explosive interest is indeed welcome, as it pushes research frontiers forward at rates never fathomed before. However, it brings along with it certain unfortunate caveats. In reference to snapping shrimp noise, I have found a certain disconnect between findings reported in the literature and some of the works that have come over the last 2-3 years. There is a knack of employing various statistical noise models for snapping shrimp noise which are imported from other branches of research. Though such 'models' may be based on substantiated claims there, they are not supported by recorded snapping shrimp data whatsoever! It is somewhat unfortunate that such works have not paid any heed to research spanning over decades, that has painstakingly investigated the snapping shrimp noise process, slowly building statistical models to where they stand today. I may be incorrect, but I think the underlying reason that has contributed to this trend is that researchers new to the oceanic community bring with them a thought heavily defined by works in their areas of expertise. Some are oblivious to the fact that underwater acoustic signal processing has evolved much on its own. Consequently, it is probable that they think themselves to be introducing novel concepts to the area. This path needs to be corrected and such myths need to be put down. To do so, this article offers a tutorial-like approach and analyzes recorded snapping shrimp noise data in [Part 2: Analyzing snapping shrimp data](#P2). Moreover, models substantiated in the literature are also briefly introduced in [Part 3: Modeling snapping shrimp noise](#P3) . The highlight amongst all is the αSGN(m) model. We end up by providing code that generates random variates and is open to all who need to use it.
 
@@ -101,6 +101,35 @@ To avoid any ambiguity, the source level is expressed in the shorthand form $$x~
 Now that the necessary definitions are out of the way, I must highlight that peak-to-peak source levels of a single snapping shrimp snap have been recorded to be as high as $$180~\text{dB re}~1\mu\text{Pa}~\text{at}~1\text{m}$$. In fact, the recently discovered Pink Floyd snapping shrimp is recorded to be even higher! Not feeling the loudness yet? Well, let's make a comparison:
 
 
-For the curious reader, a good summary of (air) acoustic terminology/measurements is given here and includes a list of source levels (measured in %$\text{dB}$%) of several sources. Of interest is the source level of a jet engine, quoted as $$140~\text{dB re}~20\mu\text{Pa}~\text{at}~50\text{m}$$ (or $$153~\text{dB re}~1\mu\text{Pa}~\text{at}~50\text{m}$$). This signifies an astonishing result: The peak-to-peak source level of a snap is much louder than a jet engine 50m away!! It really is a blessing that each individual snap lasts only for a few hundred picoseconds, else diving in such an environment without ear protection would have resulted in ruptured ear drums! With this in mind, I am sure the previously introduced audio files can be revisited with more appreciation.
+For the curious reader, a good summary of (air) acoustic terminology/measurements is given here and includes a list of source levels (measured in $$\text{dB}$$) of several sources. Of interest is the source level of a jet engine, quoted as $$140~\text{dB re}~20\mu\text{Pa}~\text{at}~50\text{m}$$ (or $$153~\text{dB re}~1\mu\text{Pa}~\text{at}~50\text{m}$$). This signifies an astonishing result: The peak-to-peak source level of a snap is much louder than a jet engine 50m away!! It really is a blessing that each individual snap lasts only for a few hundred picoseconds, else diving in such an environment without ear protection would have resulted in ruptured ear drums! With this in mind, I am sure the previously introduced audio files can be revisited with more appreciation.
+
+
+
+## What do recorded samples look like?
+
+To truly get a feel of what we are working with, it is prudent to plot the recorded noise samples on a suitable axis. If the time scale is too large, the clustering within each snap cannot be appreciated. Similarly, if one zooms-in too much, one cannot see the density of the snaps. Right below, I have plotted recorded samples of snapping shrimp noise. The x-axis is in seconds and the y-axis is labelled "uncalibrated pressure", implying that these are raw samples taken from a hydrophone and are yet to be scaled (by a constant) to be interpreted as pressure.
+ 
+
+![alt text][SSnoise]
+
+[SSnoise]: ../images/ScnapPlot.png "Snapping shrimp noise samples"
+
+Awesome, yes? With the zoom setting just right, the recording clearly exhibits a lot of character :) The noise was recorded of the coast of Singapore at a sampling rate of 180kHz. There are a few 'thuds' in the time-series caused by other acoustic sources (man-made and otherwise). Nevertheless, it gives a clear insight of the noise produced by a snapping shrimp populace. A few things pop-out instantly!
+
+
+ - The noise is impulsive, i.e., it has outliers. These are the snaps produced by the small, yet mighty snapping shrimp.
+ - Note how the outliers cluster together. This is what is termed as bursty.
+
+So, snapping shrimp noise is a bursty impulsive noise process! For the astute reader, the terminology may pose a dilemma: Doesn't 'bursty' imply that the noise is already 'impulsive'? Or in other words, is there such a thing as a 'non-impulsive' bursty noise process? If so then the term 'impulsive' is redundant. On the other hand, an 'impulsive' noise process may or may not be 'bursty'. This is a fuzzy area, but let's not get too pedantic :eek: . We stick to the definition: A realization of a bursty impulsive noise process consists of a significant number of outliers that tend to cluster together.
+
+
+The burstiness (or clustering of outliers) is an extremely important characteristic of the noise process. To highlight this, I am sharing the plot below, which represents what happens if there was no clustering at all. This was generated by taking the snapping shrimp noise samples in the previous figure and randomly interleaving them. Notice the difference! The randomized samples highlight a scenario where the noise samples are independent (more on this in the next section), which is clearly artificial and not the case.
+
+
+![alt text][SSnoise]
+
+[SSnoise]: ../images/SnapPermPlot.png "Permuted noise samples"
+
+Any one who works with underwater acoustic communication/signal processing needs to quantify the above findings in a statistical sense. This is done next. Dare to read on? :yes:.
 
 # <a name="P3"></a> Part 3: Modeling snapping shrimp noise

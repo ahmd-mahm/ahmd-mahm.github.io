@@ -201,7 +201,7 @@ As per Nolan's quote, the lack of second-order moments poses no hindrance at all
 
 Now that the amplitude distributions have been sorted out, let us get down to modeling the noise process.
 
-## The αSGN($$m$$) model
+## The αSGN(m) model
 
 Going from an amplitude distribution to a noise process that models snapping shrimp noise is tricky. From the early 2000s up until 2015, several works employed independent and identically distributed (IID) SαS noise samples. Such a process is termed as white SαS noise (WSαSN). Though it does get the empirical amplitude PDF right, the burstiness is not modeled properly. To highlight this, I have plotted a realization of WSαSN below. The amplitude distribution of the samples corresponds to the [SαS fit](#SaSFit) in the previous section. Notice the semblance of the curve with that of the [randomly permuted ambient noise plot](#SSnoise_rand) shown previously.
 

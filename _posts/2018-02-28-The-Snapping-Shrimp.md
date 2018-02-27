@@ -222,6 +222,6 @@ Several publications highlight the awesomeness of this model! Of these, [Mahmood
 So where do we go from here?! I will be attaching a MATLAB code for αSGN($$m$$) shortly, so stay tuned :)
 
 
-### Conclusion
+## Conclusion
 
 We are finally done! The goal was to capture the global scale of the snapping shrimp noise problem and give the reader a feel of what to expect when working with such noise. Audio and visuals offer motivation like no text or mathematical treatment can provide. I hope I have given this approach some justice. I have provided code that allows generating αSGN($$m$$) and SαS PDFs. Moreover, functions that allow estimating the model's parameters are posted too. So go ahead, explore, discover and make things more awesome than ever before :D !

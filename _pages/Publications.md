@@ -5,7 +5,8 @@ excerpt: "Research Interests & Publications"
 layout: single
 toc: "true"
 toc_label: "On This Page"
-toc_icon: "user-secret"
+toc_icon: "chess-rook"
+author_profile: true
 ---
 
 ## Research Interests

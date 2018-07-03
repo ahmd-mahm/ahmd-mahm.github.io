@@ -33,14 +33,17 @@ author_profile: true
 
 ### Invited Papers,Talks & Abstracts
 
-1. A. Mahmood and M. Chitre, “Uncoded Acoustic Communication in Shallow Waters with Bursty Impulsive Noise,” in Underwater Communications Networking (Ucomms 2016), (Lerici, Italy), September 2016. (Invited).
-2. A. Mahmood, V. Hari, and M. Chitre, “Model-Based Signal Detection in Snapping Shrimp Noise,” in Underwater Communications Networking (Ucomms 2016), (Lerici, Italy), September 2016. (Invited).
-3. A. Mahmood, M. Chitre, and M. Armand, “Improving PSK performance in snapping shrimp noise with rotated constellations,” in WUWNet'12: 7th ACM International Conference on Underwater Networks & Systems, (Los Angeles, USA), pp. 1-8, November 2012. (Invited).
-4. M. Chitre, A. Mahmood, and M. Armand, “Coherent communications in snapping-shrimp dominated ambient noise environments,” in Acoustics 2012 Hong Kong Conference and Exhibition, vol. 131, p. 3277, May 2012. (Invited). 
+1. A. Mahmood and M. Chitre, “Detecting OSDM Signals in Sparse Channels and Snapping Shrimp Noise,” accepted to IEEE Underwater Communications and Networking (UComms) 2018.
+2. A. Mahmood and M. Chitre, “Uncoded Acoustic Communication in Shallow Waters with Bursty Impulsive Noise,” in Underwater Communications Networking (Ucomms 2016), (Lerici, Italy), September 2016.
+3. A. Mahmood, V. Hari, and M. Chitre, “Model-Based Signal Detection in Snapping Shrimp Noise,” in Underwater Communications Networking (Ucomms 2016), (Lerici, Italy), September 2016.
+4. A. Mahmood, M. Chitre, and M. Armand, “Improving PSK performance in snapping shrimp noise with rotated constellations,” in WUWNet'12: 7th ACM International Conference on Underwater Networks & Systems, (Los Angeles, USA), pp. 1-8, November 2012.
+5. M. Chitre, A. Mahmood, and M. Armand, “Coherent communications in snapping-shrimp dominated ambient noise environments,” in Acoustics 2012 Hong Kong Conference and Exhibition, vol. 131, p. 3277, May 2012.
+
+
 
 ### Conferences
-1.	A. Mahmood and M. Chitre and H. Vishnu, “Spatial Ambient Noise Inversion Using a Single Hydrophone,” accepted in OCEANS 2018 MTS/IEEE, (Kobe, Japan), May, 2018.
-2.	Y.M Too, A. Mahmood and M. Chitre, “Feasibility of using acoustic scintillation due to underwater turbulence to measure flow speed,” accepted in OCEANS 2018 MTS/IEEE, (Kobe, Japan), May, 2018.
+1.	A. Mahmood and M. Chitre and H. Vishnu, “Spatial Ambient Noise Inversion Using a Single Hydrophone,” in OCEANS 2018 MTS/IEEE, (Kobe, Japan), May, 2018.
+2.	Y.M Too, A. Mahmood and M. Chitre, “Feasibility of using acoustic scintillation due to underwater turbulence to measure flow speed,” in OCEANS 2018 MTS/IEEE, (Kobe, Japan), May, 2018.
 3. V. Kalaiarasu, V. Hari, A. Mahmood, and M. Chitre, “Predicting underwater acoustic network variability using machine learning techniques,” in OCEANS 2017 MTS/IEEE, (Anchorage, Alaska), 2017.
 4. A. Mahmood, M. Chitre, and V. Hari, “Spatial Ambient Noise Inversion Using a Single Hydrophone,” in OCEANS 2017 MTS/IEEE, (Anchorage, Alaska), 2017.
 5. A. Mahmood and M. Chitre, “Robust Communication in Bursty Impulsive Noise and Rayleigh Block Fading,” in WUWNet '16, (Shanghai, China), September 2016.

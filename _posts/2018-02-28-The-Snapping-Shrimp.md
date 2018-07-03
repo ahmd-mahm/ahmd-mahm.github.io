@@ -22,11 +22,7 @@ The first thing I would like to talk about is the motivation behind addressing s
 The oceanic research community has seen substantial growth since the early 90s. A quick search for the term 'Underwater Acoustics' in [Web of Science](https://webofknowledge.com/){:target="_blank"} gives us the following hits per year:
 
 
-<!--![alt text][ArticlesUWAcoustics]
-[ArticlesUWAcoustics]: /images/11.png "Annual hits for underwater acoustics"-->
-
-
-<a name="ArticlesUWAcoustics"></a>![alt text](../images/11.png "Annual hits for 'underwater acoustics'")
+![alt text](../images/11.png "Annual hits for 'underwater acoustics'")
 
 This explosive interest is indeed welcome, as it pushes research frontiers forward at rates never fathomed before. However, it brings along with it certain unfortunate caveats. In reference to snapping shrimp noise, I have found a certain disconnect between findings reported in the literature and some of the works that have come over these last few years. There is a knack of employing various statistical noise models for snapping shrimp noise which are imported from other branches of research. Though such models may be based on substantiated claims there, they are not supported by recorded snapping shrimp data whatsoever. <!-- It is somewhat unfortunate that such works have not reverted tp research spanning over decades, that has painstakingly investigated the snapping shrimp noise process, slowly building statistical models to where they stand today. I may be incorrect, but I think the underlying reason that has contributed to this trend is that researchers new to the oceanic community bring with them a thought heavily defined by works in their areas of expertise. Some are oblivious to the fact that underwater acoustic signal processing has evolved much on its own. Consequently, it is probable that they think themselves to be introducing novel concepts to the area. --> 
 This path needs to be corrected and such myths need to be put down. To do so, this article offers a tutorial-like approach and analyzes recorded snapping shrimp noise data in [Part 2: Analyzing snapping shrimp data](#P2). Moreover, models substantiated in the literature are also briefly introduced in [Part 3: Modeling snapping shrimp noise](#P3). The highlight amongst all is the αSGN(m) model. We end up by providing a MATLAB code that generates random variates and is open to all who need to use it (coming soon :sweat_smile:).
@@ -94,7 +90,7 @@ For the curious reader, a good summary of (air) acoustic terminology/measurement
 ### What do recorded samples look like?
 
 To truly get a feel of what we are working with, it is prudent to plot the recorded noise samples on a suitable axis. If the time scale is too large, the clustering within each snap cannot be appreciated. Similarly, if one zooms-in too much, one cannot see the density of the snaps. Right below, I have plotted recorded samples of snapping shrimp noise. The x-axis is in seconds and the y-axis is labelled "uncalibrated pressure", implying that these are raw samples taken from a hydrophone and are yet to be scaled (by a constant) to be interpreted as pressure.
- 
+
 
 <a name="SSnoise"></a> ![alt text](../images/snap_plot.png "Snapping shrimp noise samples")
 
@@ -124,7 +120,7 @@ Any one who works with underwater acoustic communication/signal processing needs
 Now that we looked at the noise samples and have a good feel about the process (as a time-series and a sound), we can now move on to some more cooler stuff. Investigating the *amplitude distribution* of the noise process is perhaps the first thing that comes to mind. I've considered a 30 sec long recording of ambient noise. As before, this dataset is sampled at 180kHz and was recorded of the coast of Singapore. I've evaluated the empirical amplitude probability density function (PDF) and have plotted it as the yellow histogram below. Also plotted is a Gaussian PDF, whose parameters (mean and variance) are estimated via maximum-likelihood (ML) from the noise data. Perhaps its been drilled into us, but the first instinct of almost anyone out there is to assume noise to be Gaussian. The figure below (as well as the realizations shown previously) show that the noise process is clearly non-Gaussian. The log-scaled y-axis is purposely chosen as it highlights how significant the deviation actually is. Impulsiveness is factually a non-Gaussian property and we see it in its full glory below :smile::
 
 
- 
+
 <a name="GaussFit"></a>![alt text](../images/GaussFit.png "The ML Gaussian fit...")
 
 
@@ -186,7 +182,7 @@ Awesomeness! My two cents on the matter are:
 
 
 There are very efficient numerical methods that compute SαS PDFs, see [John Nolan's page](http://fs2.american.edu/jpnolan/www/stable/stable.html){:target="_blank"} in this regard. Also, the approach in [Mahmood (2017a)](http://www.sciencedirect.com/science/article/pii/S016516841630202X){:target="_blank"} proposes evaluating an SαS PDF by storing a suitably sampled heavy-tailed function, which can then be interpolated and scaled. A code for the latter is provided at the end of this article.
- 
+
 As per Nolan's quote, the lack of second-order moments poses no hindrance at all. One way is to work with the square of the scale parameter (scale is analogous to standard deviation) which does exist for the SαS family. See the signal-to-noise ratio (SNR) definitions in these manuscripts: [Gonzalez (2006)](https://www.eecis.udel.edu/~arce/Research_files/2-Zero-order.pdf){:target="_blank"} and [Mahmood (2012)](https://arl.nus.edu.sg/twiki6/pub/ARL/BibEntries/Ahmed2012bb.pdf){:target="_blank"}.
 
 

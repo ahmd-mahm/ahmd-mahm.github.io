@@ -11,7 +11,7 @@ remote_theme: "mmistakes/minimal-mistakes"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "On Ocean Statistics, Signal Processing and Communication"
+title                    : "On Statistics, Signal Processing, and Communication"
 title_separator          : "-"
 name                     : "Ahmed Mahmood"
 description              : "My door to the digital world"
@@ -94,8 +94,8 @@ analytics:
 author:
   name             : "Ahmed Mahmood"
   avatar           : "/images/IMG_3722.png"
-  bio              : "Research Lead, Acoustic Research Laboratory, National University of Singapore"
-  location         : "Singapore"
+  bio              : "PhD | Research Lead | Career Researcher"
+  location         : "Ontario, Canada"
   email            : "ahmed@arl.nus.edu.sg"
   uri              : "https://arl.nus.edu.sg/twiki6/bin/view/ARL/AhmedMahmood"
   home             : "https://goo.gl/TRBVwK"
@@ -111,7 +111,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "ahmed-212"
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
